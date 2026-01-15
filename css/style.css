@@ -1,0 +1,37 @@
+/* CUSTOM FONT */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
+
+/* GENERAL */
+
+:root {
+  /* Colors */
+  --bg: #fff;
+  --bg-alt: #333;
+  --bg-alt-2: #f0f0f0;
+  --bg-transparent: #ffffffe8;
+  --border: 0.01rem solid #333;
+  --text: #333;
+  --text-alt: #fff;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+h1,
+h2,
+h5,
+p,
+a {
+  margin: 0;
+  text-decoration: none;
+}
+
+/* GARFIELD */
+#garfield {
+}
