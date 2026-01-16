@@ -80,3 +80,58 @@ a {
   background-position: center;
   background-size: cover;
 }
+
+/* TOP LEFT CORNER */
+
+#corner__tl__btn {
+  top: -11.5rem;
+  left: -11.5rem;
+  transform: rotate(-45deg);
+}
+
+#corner__tl__content {
+  width: 30vw;
+  top: 10vh;
+  /* transform: translateX(-100vw) translateY(-100vh); */
+}
+
+.card-icon {
+  height: 2rem;
+  width: 2rem;
+  margin: 0 0.5rem;
+}
+
+article {
+  background: rgb(245, 245, 245);
+  font-size: 0.8rem;
+  list-style: none;
+  border: 0.01rem solid #333;
+  border-radius: 2rem;
+  padding: 1rem;
+  margin: 1rem;
+  width: 8.75rem;
+  min-width: 8.75rem;
+}
+
+article h2 {
+  font-size: 1rem;
+  padding: 0.3rem;
+}
+article p {
+  padding-bottom: 0.3rem;
+}
+article h2,
+article p {
+  color: #333;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cards__content {
+  display: flex;
+  align-items: center;
+}
