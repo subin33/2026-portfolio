@@ -13,11 +13,13 @@
   --text: #333;
   --text-alt: #fff;
 }
+
 html,
 body {
   width: 100%;
   height: 100%;
   margin: 0;
+  caret-color: transparent;
 }
 
 body {
@@ -81,6 +83,68 @@ a {
   background-size: cover;
 }
 
+/* CORNER COMMON STYLES */
+#corner {
+  position: absolute;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+#corner__tl__btn,
+#corner__tr__btn,
+#corner__bl__btn,
+#corner__br__btn {
+  height: 18.75rem;
+  width: 18.75rem;
+  background: #fff;
+  color: #333;
+  border: 0.01rem solid #333;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.5rem;
+  z-index: 100;
+  border-radius: 40%;
+  transition: transform 0.2s ease-in-out;
+}
+
+#corner__tl__content,
+#corner__tr__content,
+#corner__bl__content,
+#corner__br__content {
+  position: absolute;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  color: #fff;
+}
+
+#corner__tl__btn,
+#corner__tr__btn {
+  padding-bottom: 0.5rem;
+  align-items: flex-end;
+}
+
+#corner__bl__btn,
+#corner__br__btn {
+  padding-top: 0.5rem;
+}
+
+#corner__tl__btn:active,
+#corner__br__btn:active {
+  transform: rotate(-45deg) scale(1.05);
+}
+
+#corner__tr__btn:active,
+#corner__bl__btn:active {
+  transform: rotate(45deg) scale(1.05);
+}
+
 /* TOP LEFT CORNER */
 
 #corner__tl__btn {
@@ -92,7 +156,7 @@ a {
 #corner__tl__content {
   width: 30vw;
   top: 10vh;
-  /* transform: translateX(-100vw) translateY(-100vh); */
+  transform: translateX(-100vw) translateY(-100vh);
 }
 
 .card-icon {
@@ -134,4 +198,23 @@ article p {
 .cards__content {
   display: flex;
   align-items: center;
+}
+
+.cards__content__text {
+  color: #333;
+  text-align: left;
+  margin: 0 1rem;
+}
+
+.cards__content__text ul {
+  width: 40vw;
+  margin-left: -30px;
+}
+
+.cards__content__text ul li {
+  margin-top: 7px;
+}
+
+.cards__content__text ul p {
+  font-size: 13px;
 }
