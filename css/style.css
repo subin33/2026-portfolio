@@ -393,3 +393,30 @@ article p {
   color: #333;
   transition: all 300ms ease;
 }
+
+/* COLOR MODE TOGGLE BUTTON */
+#color__mode {
+  background: #f0f0f0;
+  height: 2.75rem;
+  width: 4rem;
+  border-radius: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#toggle__btton {
+  background-image: url(/assets/icons/sun.png);
+  background-size: cover;
+  cursor: pointer;
+}
+
+.toggle__icon {
+  height: 2rem;
+  width: 2rem;
+  margin: 0 0.5rem;
+}
