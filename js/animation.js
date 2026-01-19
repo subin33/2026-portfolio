@@ -52,33 +52,108 @@ function playAnimation(animation, reversAnimation) {
   }
 }
 
-// Onclick corner button functions
-tlBtn.onclick = function () {
+function playClosingAnimation(reverseAnimation) {
+  tlBtn.innerHTML = "About";
   trBtn.innerHTML = "Experience";
   blBtn.innerHTML = "Projects";
   brBtn.innerHTML = "Contact";
 
-  // Setting activeCorner
-  activeCorner = "top-left";
-  tlBtn.innerHTML = "&uarr;<br/>About";
+  switch (activeCorner) {
+    case "top-left":
+      tlBtn.style.background = bgColor;
+      tlBtn.style.color = textColor;
+      tlContent.style.transform = tlHidden;
+      break;
+    case "top-right":
+      trBtn.style.background = bgColor;
+      trBtn.style.color = textColor;
+      trContent.style.transform = trHidden;
+      break;
+    case "bottom-left":
+      blBtn.style.background = bgColor;
+      blBtn.style.color = textColor;
+      blContent.style.transform = blHidden;
+      break;
+    case "bottom-right":
+      brBtn.style.background = bgColor;
+      brBtn.style.color = textColor;
+      brContent.style.transform = brHidden;
+      break;
 
-  playAnimation("animate-top-left", "reverse-animate-top-left");
+    default:
+  }
 
-  // Change background colors
-  trBtn.style.background = bgColor;
-  brBtn.style.background = bgColor;
-  blBtn.style.background = bgColor;
-  tlBtn.style.background = bgColorAlt;
+  garfieldImage.className = "";
+  lastReverseAnimation = "";
+  activeCorner = "";
+  garfieldImage.classList.add(reverseAnimation);
 
-  // Change text colors
-  trBtn.style.color = textColor;
-  brBtn.style.color = textColor;
-  blBtn.style.color = textColor;
-  tlBtn.style.color = textColorAlt;
+  setTimeout(function () {
+    garfieldImage.classList.remove(reverseAnimation);
+  }, 200);
+}
 
-  // Change positions of the corner content
-  trContent.style.transform = trHidden;
-  brContent.style.transform = brHidden;
-  blContent.style.transform = blHidden;
-  tlContent.style.transform = tlActive;
+// Onclick corner button functions
+tlBtn.onclick = function () {
+  if (activeCorner === "top-left") {
+    playClosingAnimation("reverse-animate-top-left");
+  } else {
+    // trBtn.innerHTML = "Experience";
+    // blBtn.innerHTML = "Projects";
+    // brBtn.innerHTML = "Contact";
+
+    // Setting activeCorner
+    activeCorner = "top-left";
+    tlBtn.innerHTML = "&uarr;<br/>About";
+
+    playAnimation("animate-top-left", "reverse-animate-top-left");
+
+    // Change background colors
+    trBtn.style.background = bgColor;
+    brBtn.style.background = bgColor;
+    blBtn.style.background = bgColor;
+    tlBtn.style.background = bgColorAlt;
+
+    // Change text colors
+    trBtn.style.color = textColor;
+    brBtn.style.color = textColor;
+    blBtn.style.color = textColor;
+    tlBtn.style.color = textColorAlt;
+
+    // Change positions of the corner content
+    trContent.style.transform = trHidden;
+    brContent.style.transform = brHidden;
+    blContent.style.transform = blHidden;
+    tlContent.style.transform = tlActive;
+  }
+};
+
+trBtn.onclick = function () {
+  if (activeCorner === "top-right") {
+    playClosingAnimation("reverse-animate-top-right");
+  } else {
+    //Setting activeCorner
+    activeCorner = "top-right";
+    trBtn.innerHTML = "&uarr;<br/>Experience";
+
+    playAnimation("animate-top-right", "reverse-animate-top-right");
+
+    // Change background colors
+    trBtn.style.background = bgColorAlt;
+    brBtn.style.background = bgColor;
+    blBtn.style.background = bgColor;
+    tlBtn.style.background = bgColor;
+
+    // Change text colors
+    trBtn.style.color = textColorAlt;
+    brBtn.style.color = textColor;
+    blBtn.style.color = textColor;
+    tlBtn.style.color = textColor;
+
+    // Change positions of the corner content
+    trContent.style.transform = trActive;
+    brContent.style.transform = brHidden;
+    blContent.style.transform = blHidden;
+    tlContent.style.transform = tlHidden;
+  }
 };
