@@ -12,10 +12,10 @@ const blContent = document.querySelector("#corner__bl__content");
 const brContent = document.querySelector("#corner__br__content");
 
 // Define colors and positions
-const bgColor = "#fff";
-const bgColorAlt = "#333";
-const textColor = "#333";
-const textColorAlt = "#fff";
+const bgColor = "var(--bg)";
+const bgColorAlt = "var(--bg-alt)";
+const textColor = "var(--text)";
+const textColorAlt = "var(--text-alt)";
 
 let tlActive = "translateX(5vw) translateY(0)";
 let tlHidden = "translateX(-100vw) translateY(-100vh)";

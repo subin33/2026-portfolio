@@ -1,41 +1,6 @@
 /* CUSTOM FONT */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
 
-/* GENERAL */
-
-:root {
-  /* Colors */
-  --bg: #fff;
-  --bg-alt: #333;
-  --bg-alt-2: #f0f0f0;
-  --bg-transparent: #ffffffe8;
-  --border: 0.01rem solid #333;
-  --text: #333;
-  --text-alt: #fff;
-
-  /* Face animations */
-  --tl-1: url(/assets/face-animation-light/tl-1.png);
-  --tl-2: url(/assets/face-animation-light/tl-2.png);
-  --tl-3: url(/assets/face-animation-light/tl-3.png);
-  --tl-4: url(/assets/face-animation-light/tl-4.png);
-  --tl-5: url(/assets/face-animation-light/tl-5.png);
-  --tr-1: url(/assets/face-animation-light/tr-1.png);
-  --tr-2: url(/assets/face-animation-light/tr-2.png);
-  --tr-3: url(/assets/face-animation-light/tr-3.png);
-  --tr-4: url(/assets/face-animation-light/tr-4.png);
-  --tr-5: url(/assets/face-animation-light/tr-5.png);
-  --bl-1: url(/assets/face-animation-light/bl-1.png);
-  --bl-2: url(/assets/face-animation-light/bl-2.png);
-  --bl-3: url(/assets/face-animation-light/bl-3.png);
-  --bl-4: url(/assets/face-animation-light/bl-4.png);
-  --bl-5: url(/assets/face-animation-light/bl-5.png);
-  --br-1: url(/assets/face-animation-light/br-1.png);
-  --br-2: url(/assets/face-animation-light/br-2.png);
-  --br-3: url(/assets/face-animation-light/br-3.png);
-  --br-4: url(/assets/face-animation-light/br-4.png);
-  --br-5: url(/assets/face-animation-light/br-5.png);
-}
-
 html,
 body {
   width: 100%;
@@ -98,7 +63,7 @@ a {
 }
 
 #garfield__animation__img {
-  background-image: url(/assets/face-animation-light/bl-1.png);
+  background-image: var(--tl-1);
   transform: translateX(8%);
   height: 100%;
   background-position: center;
@@ -121,9 +86,9 @@ a {
 #corner__br__btn {
   height: 18.75rem;
   width: 18.75rem;
-  background: #fff;
-  color: #333;
-  border: 0.01rem solid #333;
+  background: var(--bg);
+  color: var(--text-alt);
+  border: var(--border);
   position: fixed;
   display: flex;
   justify-content: center;
@@ -143,7 +108,7 @@ a {
   position: absolute;
   text-align: center;
   transition: transform 0.3s ease-in-out;
-  color: #fff;
+  color: var(--text-alt);
 }
 
 #corner__tl__btn,
@@ -181,19 +146,29 @@ a {
   transform: translateX(-100vw) translateY(-100vh);
 }
 
-.card__icon {
-  height: 2rem;
-  width: 2rem;
+.card__icon,
+.check__icon {
+  height: 1.5rem;
+  width: 1.5rem;
   margin: 0 0.5rem;
   font-size: 1.4rem;
-  color: black;
+  color: var(--icon);
+}
+.check__icon {
+  display: inline-block;
+  background-image: var(--checkmark);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 0;
+  margin: 0;
 }
 
 article {
-  background: rgb(245, 245, 245);
+  background: var(--bg-1);
   font-size: 0.8rem;
   list-style: none;
-  border: 0.01rem solid #333;
+  border: var(--border);
   border-radius: 2rem;
   padding: 1rem;
   margin: 1rem;
@@ -210,7 +185,7 @@ article p {
 }
 article h2,
 article p {
-  color: #333;
+  color: var(--text);
 }
 
 .cards {
@@ -225,7 +200,7 @@ article p {
 }
 
 .cards__content__text {
-  color: #333;
+  color: var(--text);
   text-align: left;
   margin: 0 1rem;
 }
@@ -320,8 +295,8 @@ article p {
   border-radius: 2rem;
   overflow: hidden;
   margin: auto auto 0.5rem;
-  border: 0.01rem solid #333;
-  background: #333;
+  border: var(--border);
+  background: var(--bg-alt);
 }
 
 .project__img {
@@ -345,7 +320,7 @@ article p {
 }
 
 .project__arrow {
-  border: 0.01rem solid #333;
+  border: var(--border);
   width: 3rem;
   height: 2rem;
   margin: 0;
@@ -364,7 +339,7 @@ article p {
 #corner__br__content {
   right: 2rem;
   bottom: 5.7rem;
-  border: 1px solid black;
+  border: var(--border-1);
   padding: 2.5rem;
   border-radius: 3rem;
   transform: translateX(100vw) translateY(100vh);
@@ -377,11 +352,11 @@ article p {
   width: 17rem;
 }
 .contact__text {
-  color: #333;
+  color: var(--text);
 }
 
 .btn__contact {
-  border: 0.01rem solid #333;
+  border: var(--border);
   border-radius: 2rem;
   display: flex;
   align-items: center;
@@ -389,34 +364,7 @@ article p {
   height: 3rem;
   flex-basis: 50%;
   font-weight: 600;
-  background: rgb(245, 245, 245);
-  color: #333;
+  background: var(--bg-1);
+  color: var(--text);
   transition: all 300ms ease;
-}
-
-/* COLOR MODE TOGGLE BUTTON */
-#color__mode {
-  background: #f0f0f0;
-  height: 2.75rem;
-  width: 4rem;
-  border-radius: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-#toggle__btton {
-  background-image: url(/assets/icons/sun.png);
-  background-size: cover;
-  cursor: pointer;
-}
-
-.toggle__icon {
-  height: 2rem;
-  width: 2rem;
-  margin: 0 0.5rem;
 }
