@@ -6,6 +6,7 @@
     <title>Garfield Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <script src="/js/animation.js" defer></script>
+    <script src="/js/slideshow.js" defer></script>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/animation.css" />
   </head>
@@ -133,8 +134,34 @@
 
       <div id="corner__bl">
         <div id="corner__bl__btn">Projects</div>
-        <div id="corner__bl__content"></div>
+        <div id="corner__bl__content">
+          <div class="content__projects">
+            <div class="projects project-1">
+              <img class="project__img" src="assets/projects/project-1.png" alt="Project-1" />
+              <h2 class="project__title">Project One</h2>
+              <button class="project__btn" onclick="window.location.href='https://job-nest-4bq2zkvpc-subin-project.vercel.app/'">Demo</button>
+              <button class="project__btn" onclick="window.location.href='https://github.com/subin33/JobNest'">GitHub</button>
+            </div>
+            <div class="projects project-2">
+              <img class="project__img" src="/assets/projects/project-2.png" alt="Project-2" />
+              <h2 class="project__title">Project Two</h2>
+              <button class="project__btn" onclick="window.location.href='https://port-0-chatting-app-m6azhk9ob720801f.sel4.cloudtype.app/'">
+                Demo
+              </button>
+              <button class="project__btn" onclick="window.location.href='https://github.com/subin33/Chatting_App'">GitHub</button>
+            </div>
+            <div class="projects project-3">
+              <img class="project__img" src="/assets/projects/project-3.png" alt="Project-3" />
+              <h2 class="project__title">Project Three</h2>
+              <button class="project__btn" onclick="window.location.href='https://project-playground.netlify.app/project/tetris/'">Demo</button>
+              <button class="project__btn" onclick="window.location.href='https://github.com/subin33/tetris-game'">GitHub</button>
+            </div>
+            <button class="project__arrow" onclick="navigateProject(-1)">&#10094;</button>
+            <button class="project__arrow" onclick="navigateProject(1)">&#10095;</button>
+          </div>
+        </div>
       </div>
+
       <div id="corner__br">
         <div id="corner__br__btn">Contact</div>
         <div id="corner__br__content"></div>

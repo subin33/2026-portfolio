@@ -304,6 +304,56 @@ article p {
   left: -11.5rem;
   transform: rotate(45deg);
 }
+#corner__bl__content {
+  width: 25rem;
+  bottom: 15vh;
+  left: -4.1rem;
+  bottom: 6.5rem;
+  transform: translateX(-100vw) translateY(100vh);
+}
+.content__projects {
+  margin: 0;
+}
+.projects {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 2rem;
+  overflow: hidden;
+  margin: auto auto 0.5rem;
+  border: 0.01rem solid #333;
+  background: #333;
+}
+
+.project__img {
+  width: 100%;
+}
+
+.project__title {
+  width: 100%;
+  margin: 0;
+  padding: 0.3rem 0;
+  font-size: 1rem;
+}
+
+.project__btn {
+  border: none;
+  padding: 0.5rem;
+  height: 3rem;
+  flex-basis: 50%;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.project__arrow {
+  border: 0.01rem solid #333;
+  width: 3rem;
+  height: 2rem;
+  margin: 0;
+  padding: 0.2rem 0;
+  cursor: pointer;
+  border-radius: 1rem;
+}
 
 /* BOTTOM RIGHT CORNER */
 #corner__br__btn {
