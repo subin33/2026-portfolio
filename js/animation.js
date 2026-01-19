@@ -182,3 +182,33 @@ blBtn.onclick = function () {
     tlContent.style.transform = tlHidden;
   }
 };
+
+brBtn.onclick = function () {
+  if (activeCorner === "bottom-right") {
+    playClosingAnimation("reverse-animate-bottom-right");
+  } else {
+    // Setting activeCorner
+    activeCorner = "bottom-right";
+    brBtn.innerHTML = "Contact<br/>&darr;";
+
+    playAnimation("animate-bottom-right", "reverse-animate-bottom-right");
+
+    // Change background colors
+    trBtn.style.background = bgColor;
+    brBtn.style.background = bgColorAlt;
+    blBtn.style.background = bgColor;
+    tlBtn.style.background = bgColor;
+
+    // Change text colors
+    trBtn.style.color = textColor;
+    brBtn.style.color = textColorAlt;
+    blBtn.style.color = textColor;
+    tlBtn.style.color = textColor;
+
+    // Change positions of the corner content
+    trContent.style.transform = trHidden;
+    brContent.style.transform = brActive;
+    blContent.style.transform = blHidden;
+    tlContent.style.transform = tlHidden;
+  }
+};
