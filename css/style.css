@@ -280,7 +280,7 @@ article p {
   transform: rotate(45deg);
 }
 #corner__bl__content {
-  width: 25rem;
+  width: 35rem;
   bottom: 15vh;
   left: 0;
   transform: translateX(-100vw) translateY(100vh);
@@ -288,8 +288,9 @@ article p {
 .content__projects {
   margin: 0;
 }
+
 .projects {
-  width: 80%;
+  width: 60%;
   display: flex;
   flex-wrap: wrap;
   border-radius: 2rem;
@@ -314,9 +315,14 @@ article p {
   border: none;
   padding: 0.5rem;
   height: 3rem;
-  flex-basis: 50%;
   font-weight: 600;
   cursor: pointer;
+  flex-basis: 50%;
+}
+
+/* ✅ 버튼이 1개만 있을 때 */
+.projects:has(.project__btn:only-of-type) .project__btn {
+  flex-basis: 100%;
 }
 
 .project__arrow {

@@ -97,7 +97,6 @@ function handleWindowResize() {
         trContent.style.background = "var(--bg-transparent)";
         trContent.style.zIndex = "200";
 
-        // ✅ experience 모바일 중앙 정렬
         experience.style.left = "50%";
         experience.style.top = "50%";
         experience.style.right = "";
@@ -115,7 +114,6 @@ function handleWindowResize() {
         trContent.style.top = "10vh";
         trContent.style.display = "block";
 
-        // ✅ experience 데스크탑 원래 위치
         experience.style.left = "";
         experience.style.top = "0";
         experience.style.right = "0";
@@ -124,6 +122,8 @@ function handleWindowResize() {
       break;
 
     case "bottom-left":
+      const projects = document.querySelectorAll("#corner__bl .projects");
+
       if (window.innerWidth <= 600) {
         blActive = "translateX(0) translateY(0)";
         blContent.style.transform = "translateX(0vw) translateY(0)";
@@ -139,12 +139,11 @@ function handleWindowResize() {
         tlBtn.style.zIndex = "100";
         blBtn.style.zIndex = "300";
         brBtn.style.zIndex = "100";
-        projectOne.style.width = "70%";
-        projectOne.style.margin = "auto auto 0.5rem";
-        projectTwo.style.width = "70%";
-        projectTwo.style.margin = "auto auto 0.5rem";
-        projectThree.style.width = "70%";
-        projectThree.style.margin = "auto auto 0.5rem";
+
+        projects.forEach((project) => {
+          project.style.width = "70%";
+          project.style.margin = "auto auto 0.5rem";
+        });
       } else if (window.innerWidth <= 1100) {
         blActive = "translateX(0) translateY(0)";
         blContent.style.transform = "translateX(0vw) translateY(0)";
@@ -160,22 +159,13 @@ function handleWindowResize() {
         tlBtn.style.zIndex = "100";
         blBtn.style.zIndex = "300";
         brBtn.style.zIndex = "100";
-        projectOne.style.width = "40%";
-        projectOne.style.margin = "auto auto 0.5rem";
-        projectTwo.style.width = "40%";
-        projectTwo.style.margin = "auto auto 0.5rem";
-        projectThree.style.width = "40%";
-        projectThree.style.margin = "auto auto 0.5rem";
       } else {
         blActive = "translateX(10vw) translateY(7vh)";
         blContent.style.transform = "translateX(10vw) translateY(7vh)";
-        blContent.style.width = "15rem";
         blContent.style.height = "0";
-        blContent.style.top = "40vh";
+        blContent.style.top = "26vh";
+        blContent.style.left = "-9vw";
         blContent.style.display = "block";
-        projectOne.style.width = "100%";
-        projectTwo.style.width = "100%";
-        projectThree.style.width = "100%";
       }
       break;
 
@@ -306,6 +296,10 @@ tlBtn.onclick = function () {
   if (activeCorner === "top-left") {
     playClosingAnimation("reverse-animate-top-left");
   } else {
+    trBtn.innerHTML = "Experience";
+    blBtn.innerHTML = "Projects";
+    brBtn.innerHTML = "Contact";
+
     // Setting activeCorner
     activeCorner = "top-left";
     tlBtn.innerHTML = "&uarr;<br/>About";
@@ -337,6 +331,10 @@ trBtn.onclick = function () {
   if (activeCorner === "top-right") {
     playClosingAnimation("reverse-animate-top-right");
   } else {
+    tlBtn.innerHTML = "About";
+    blBtn.innerHTML = "Projects";
+    brBtn.innerHTML = "Contact";
+
     //Setting activeCorner
     activeCorner = "top-right";
     trBtn.innerHTML = "&uarr;<br/>Experience";
@@ -368,6 +366,12 @@ blBtn.onclick = function () {
   if (activeCorner === "bottom-left") {
     playClosingAnimation("reverse-animate-bottom-left");
   } else {
+    console.log("1tlBtn", tlBtn);
+    tlBtn.innerHTML = "About";
+    trBtn.innerHTML = "Experience";
+    brBtn.innerHTML = "Contact";
+    console.log("2tlBtn", tlBtn);
+
     // Setting activeCorner
     activeCorner = "bottom-left";
     blBtn.innerHTML = "Projects<br/>&darr;";
@@ -399,6 +403,10 @@ brBtn.onclick = function () {
   if (activeCorner === "bottom-right") {
     playClosingAnimation("reverse-animate-bottom-right");
   } else {
+    tlBtn.innerHTML = "About";
+    trBtn.innerHTML = "Experience";
+    blBtn.innerHTML = "Projects";
+
     // Setting activeCorner
     activeCorner = "bottom-right";
     brBtn.innerHTML = "Contact<br/>&darr;";
