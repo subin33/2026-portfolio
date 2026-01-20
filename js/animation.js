@@ -1,6 +1,11 @@
 // Define DOM elements
 const garfieldImage = document.querySelector("#garfield__animation__img");
 
+const tl = document.querySelector("#corner__tl");
+const tr = document.querySelector("#corner__tr");
+const bl = document.querySelector("#corner__bl");
+const br = document.querySelector("#corner__br");
+
 const tlBtn = document.querySelector("#corner__tl__btn");
 const trBtn = document.querySelector("#corner__tr__btn");
 const blBtn = document.querySelector("#corner__bl__btn");
@@ -11,13 +16,20 @@ const trContent = document.querySelector("#corner__tr__content");
 const blContent = document.querySelector("#corner__bl__content");
 const brContent = document.querySelector("#corner__br__content");
 
+const projectOne = document.querySelector(".project-1");
+const projectTwo = document.querySelector(".project-2");
+const projectThree = document.querySelector(".project-3");
+
+const experience = document.querySelector(".experience");
+const card = document.querySelector(".cards");
+
 // Define colors and positions
 const bgColor = "var(--bg)";
 const bgColorAlt = "var(--bg-alt)";
 const textColor = "var(--text)";
 const textColorAlt = "var(--text-alt)";
 
-let tlActive = "translateX(5vw) translateY(0)";
+let tlActive = "translateX(7.5vw) translateY(0)";
 let tlHidden = "translateX(-100vw) translateY(-100vh)";
 
 let trActive = "translateX(-5vw) translateY(0)";
@@ -34,6 +46,202 @@ let activeCorner = "";
 
 // Store last reverse animation, ready to be played
 let lastReverseAnimation = "";
+
+window.addEventListener("resize", handleWindowResize);
+
+// Add on event listener to the window object to listen for resize events
+function handleWindowResize() {
+  switch (activeCorner) {
+    case "top-left":
+      if (window.innerWidth <= 1100) {
+        tlActive = "translateX(0) translateY(0)";
+        tlContent.style.transform = "translateX(0vw) translateY(0)";
+        tlContent.style.width = "100vw";
+        tlContent.style.height = "100vh";
+        tlContent.style.top = "0";
+        tlContent.style.display = "flex";
+        tlContent.style.alignItems = "center";
+        tlContent.style.justifyContent = "center";
+        tlContent.style.background = "var(--bg-transparent)";
+        card.style.marginTop = "7rem";
+        card.style.width = "80%";
+        tlContent.style.zIndex = "200";
+        tlBtn.style.zIndex = "300";
+        trBtn.style.zIndex = "100";
+        blBtn.style.zIndex = "100";
+        brBtn.style.zIndex = "100";
+      } else {
+        tlActive = "translateX(7.5vw) translateY(0)";
+        tlContent.style.transform = "translateX(5vw) translateY(0)";
+        tlContent.style.width = "30vw";
+        tlContent.style.height = "0";
+        tlContent.style.top = "10vh";
+        tlContent.style.display = "block";
+        card.style.marginTop = "";
+        card.style.width = "";
+      }
+      break;
+
+    case "top-right":
+      if (window.innerWidth <= 1100) {
+        trActive = "translateX(0) translateY(0)";
+        trContent.style.transform = "translateX(0vw) translateY(0)";
+        trContent.style.width = "100vw";
+        trContent.style.height = "100vh";
+        trContent.style.top = "0";
+        trContent.style.right = "0";
+
+        trContent.style.display = "flex";
+        trContent.style.alignItems = "center";
+        trContent.style.justifyContent = "center";
+        trContent.style.background = "var(--bg-transparent)";
+        trContent.style.zIndex = "200";
+
+        // ✅ experience 모바일 중앙 정렬
+        experience.style.left = "50%";
+        experience.style.top = "50%";
+        experience.style.right = "";
+        experience.style.transform = "translateX(-50%) translateY(-50%)";
+
+        trBtn.style.zIndex = "300";
+        tlBtn.style.zIndex = "100";
+        blBtn.style.zIndex = "100";
+        brBtn.style.zIndex = "100";
+      } else {
+        trActive = "translateX(10vw) translateY(0)";
+        trContent.style.transform = "translateX(-5vw) translateY(0)";
+        trContent.style.width = "30vw";
+        trContent.style.height = "0";
+        trContent.style.top = "10vh";
+        trContent.style.display = "block";
+
+        // ✅ experience 데스크탑 원래 위치
+        experience.style.left = "";
+        experience.style.top = "0";
+        experience.style.right = "0";
+        experience.style.transform = "";
+      }
+      break;
+
+    case "bottom-left":
+      if (window.innerWidth <= 600) {
+        blActive = "translateX(0) translateY(0)";
+        blContent.style.transform = "translateX(0vw) translateY(0)";
+        blContent.style.width = "100vw";
+        blContent.style.height = "100vh";
+        blContent.style.top = "0";
+        blContent.style.display = "flex";
+        blContent.style.alignItems = "center";
+        blContent.style.justifyContent = "center";
+        blContent.style.background = "var(--bg-transparent)";
+        blContent.style.zIndex = "200";
+        trBtn.style.zIndex = "100";
+        tlBtn.style.zIndex = "100";
+        blBtn.style.zIndex = "300";
+        brBtn.style.zIndex = "100";
+        projectOne.style.width = "70%";
+        projectOne.style.margin = "auto auto 0.5rem";
+        projectTwo.style.width = "70%";
+        projectTwo.style.margin = "auto auto 0.5rem";
+        projectThree.style.width = "70%";
+        projectThree.style.margin = "auto auto 0.5rem";
+      } else if (window.innerWidth <= 1100) {
+        blActive = "translateX(0) translateY(0)";
+        blContent.style.transform = "translateX(0vw) translateY(0)";
+        blContent.style.width = "100vw";
+        blContent.style.height = "100vh";
+        blContent.style.top = "0";
+        blContent.style.display = "flex";
+        blContent.style.alignItems = "center";
+        blContent.style.justifyContent = "center";
+        blContent.style.background = "var(--bg-transparent)";
+        blContent.style.zIndex = "200";
+        trBtn.style.zIndex = "100";
+        tlBtn.style.zIndex = "100";
+        blBtn.style.zIndex = "300";
+        brBtn.style.zIndex = "100";
+        projectOne.style.width = "40%";
+        projectOne.style.margin = "auto auto 0.5rem";
+        projectTwo.style.width = "40%";
+        projectTwo.style.margin = "auto auto 0.5rem";
+        projectThree.style.width = "40%";
+        projectThree.style.margin = "auto auto 0.5rem";
+      } else {
+        blActive = "translateX(10vw) translateY(7vh)";
+        blContent.style.transform = "translateX(10vw) translateY(7vh)";
+        blContent.style.width = "15rem";
+        blContent.style.height = "0";
+        blContent.style.top = "40vh";
+        blContent.style.display = "block";
+        projectOne.style.width = "100%";
+        projectTwo.style.width = "100%";
+        projectThree.style.width = "100%";
+      }
+      break;
+
+    case "bottom-right":
+      if (window.innerWidth <= 600) {
+        brActive = "translateX(0) translateY(0)";
+        brContent.style.transform = "translateX(0vw) translateY(0)";
+        brContent.style.width = "100vw";
+        brContent.style.height = "100vh";
+        brContent.style.bottom = "0";
+        brContent.style.display = "flex";
+        brContent.style.flexDirection = "column";
+        brContent.style.alignItems = "center";
+        brContent.style.justifyContent = "center";
+        brContent.style.background = "var(--bg-transparent)";
+        brContent.style.zIndex = "200";
+
+        brContent.style.border = "none";
+        brContent.style.padding = "0";
+
+        brContent.querySelectorAll(":scope > div").forEach((row) => {
+          row.style.gap = "1.5rem";
+        });
+
+        trBtn.style.zIndex = "100";
+        tlBtn.style.zIndex = "100";
+        blBtn.style.zIndex = "100";
+        brBtn.style.zIndex = "300";
+      } else if (window.innerWidth <= 1100) {
+        brActive = "translateX(0) translateY(0)";
+        brContent.style.transform = "translateX(0vw) translateY(0)";
+        brContent.style.width = "100vw";
+        brContent.style.height = "100vh";
+        brContent.style.bottom = "0";
+        brContent.style.display = "flex";
+        brContent.style.flexDirection = "column";
+        brContent.style.alignItems = "center";
+        brContent.style.justifyContent = "center";
+        brContent.style.background = "var(--bg-transparent)";
+        brContent.style.zIndex = "200";
+
+        brContent.style.border = "none";
+        brContent.style.padding = "2.5rem";
+        brContent.querySelectorAll(":scope > div").forEach((row) => {
+          row.style.gap = "1.2rem";
+        });
+
+        trBtn.style.zIndex = "100";
+        tlBtn.style.zIndex = "100";
+        blBtn.style.zIndex = "100";
+        brBtn.style.zIndex = "300";
+      } else {
+        brActive = "translateX(-5vw) translateY(0)";
+        brContent.style.transform = "translateX(-5vw) translateY(0)";
+        brContent.style.bottom = "15vh";
+        brContent.style.display = "block";
+
+        brContent.style.border = "var(--border-1)";
+        brContent.style.padding = "2.5rem";
+        brContent.querySelectorAll(":scope > div").forEach((row) => {
+          row.style.gap = "1.2rem";
+        });
+      }
+      break;
+  }
+}
 
 function playAnimation(animation, reversAnimation) {
   // Remove all the animation classes from garfieldImage
@@ -102,6 +310,7 @@ tlBtn.onclick = function () {
     activeCorner = "top-left";
     tlBtn.innerHTML = "&uarr;<br/>About";
 
+    handleWindowResize();
     playAnimation("animate-top-left", "reverse-animate-top-left");
 
     // Change background colors
@@ -132,6 +341,7 @@ trBtn.onclick = function () {
     activeCorner = "top-right";
     trBtn.innerHTML = "&uarr;<br/>Experience";
 
+    handleWindowResize();
     playAnimation("animate-top-right", "reverse-animate-top-right");
 
     // Change background colors
@@ -161,6 +371,8 @@ blBtn.onclick = function () {
     // Setting activeCorner
     activeCorner = "bottom-left";
     blBtn.innerHTML = "Projects<br/>&darr;";
+
+    handleWindowResize();
     playAnimation("animate-bottom-left", "reverse-animate-bottom-left");
 
     // Change background colors
@@ -191,6 +403,7 @@ brBtn.onclick = function () {
     activeCorner = "bottom-right";
     brBtn.innerHTML = "Contact<br/>&darr;";
 
+    handleWindowResize();
     playAnimation("animate-bottom-right", "reverse-animate-bottom-right");
 
     // Change background colors

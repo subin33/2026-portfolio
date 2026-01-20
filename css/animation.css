@@ -197,3 +197,49 @@
     background-image: var(--br-1);
   }
 }
+
+/* SMALL SCREEN OVERLAY */
+@media (max-width: 465px) {
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 9999;
+    transform: translateY(-100%);
+    animation: dropDown 0.6s ease-out forwards;
+  }
+
+  /* Light mode */
+  :root.light__mode body::before {
+    background-image: url("/assets/responsive/screen-small-light.png");
+    animation: dropDown 0.6s ease-out forwards;
+  }
+
+  /* Dark mode */
+  :root.dark__mode body::before {
+    background-image: url("/assets/responsive/screen-small-dark.png");
+    animation: dropDown 0.6s ease-out forwards;
+  }
+
+  #garfield,
+  #corner,
+  #color__mode {
+    visibility: hidden;
+  }
+
+  body {
+    overflow: hidden;
+  }
+}
+
+@keyframes dropDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

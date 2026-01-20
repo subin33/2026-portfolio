@@ -87,7 +87,7 @@ a {
   height: 18.75rem;
   width: 18.75rem;
   background: var(--bg);
-  color: var(--text-alt);
+  color: var(--text);
   border: var(--border);
   position: fixed;
   display: flex;
@@ -195,7 +195,7 @@ article p {
 }
 
 .cards__content {
-  display: flex;
+  display: block;
   align-items: center;
 }
 
@@ -203,6 +203,7 @@ article p {
   color: var(--text);
   text-align: left;
   margin: 0 1rem;
+  font-size: 15px;
 }
 
 .cards__content__text ul {
@@ -228,14 +229,13 @@ article p {
 
 #corner__tr__content {
   width: 30vw;
-  top: 7rem;
-  right: 1.5rem;
+  top: 10vh;
   transform: translate(100vw, -100vh);
 }
 
 .experience {
   position: absolute;
-  right: 0;
+  /* right: 0; */
   top: 0;
 }
 
@@ -281,15 +281,15 @@ article p {
 }
 #corner__bl__content {
   width: 25rem;
-  left: -5.5rem;
-  bottom: 7.5rem;
+  bottom: 15vh;
+  left: 0;
   transform: translateX(-100vw) translateY(100vh);
 }
 .content__projects {
   margin: 0;
 }
 .projects {
-  width: 70%;
+  width: 80%;
   display: flex;
   flex-wrap: wrap;
   border-radius: 2rem;
@@ -337,12 +337,12 @@ article p {
 }
 
 #corner__br__content {
-  right: 2rem;
-  bottom: 5.7rem;
+  bottom: 0;
+  right: 0vw;
+  transform: translateX(100vw) translateY(100vh);
   border: var(--border-1);
   padding: 2.5rem;
   border-radius: 3rem;
-  transform: translateX(100vw) translateY(100vh);
 }
 
 #corner__br__content div {
