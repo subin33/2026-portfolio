@@ -394,6 +394,7 @@ article p {
   }
   .project__arrow,
   .project__btn {
+    color: inherit;
     -webkit-tap-highlight-color: transparent;
   }
 }
