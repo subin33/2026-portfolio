@@ -383,7 +383,7 @@ article p {
     font-size: 13px;
   }
   .cards {
-    gap: 0;
+    gap: 1rem;
   }
   article {
     margin: 0.7rem;
@@ -394,7 +394,7 @@ article p {
   }
   .project__arrow,
   .project__btn {
-    color: inherit;
+    color: black;
     -webkit-tap-highlight-color: transparent;
   }
 }

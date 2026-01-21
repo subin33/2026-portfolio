@@ -64,7 +64,6 @@ function handleWindowResize() {
         tlContent.style.alignItems = "center";
         tlContent.style.justifyContent = "center";
         tlContent.style.background = "var(--bg-transparent)";
-        card.style.marginTop = "7rem";
         card.style.width = "80%";
         articles.forEach((el) => {
           el.style.display = "inline-block";
@@ -81,7 +80,6 @@ function handleWindowResize() {
         tlContent.style.height = "0";
         tlContent.style.top = "10vh";
         tlContent.style.display = "block";
-        card.style.marginTop = "";
         card.style.width = "";
         articles.forEach((el) => {
           el.style.display = "";
