@@ -20,6 +20,7 @@ const projectOne = document.querySelector(".project-1");
 const projectTwo = document.querySelector(".project-2");
 const projectThree = document.querySelector(".project-3");
 
+const articles = tlContent.querySelectorAll("article");
 const experience = document.querySelector(".experience");
 const card = document.querySelector(".cards");
 
@@ -65,6 +66,9 @@ function handleWindowResize() {
         tlContent.style.background = "var(--bg-transparent)";
         card.style.marginTop = "7rem";
         card.style.width = "80%";
+        articles.forEach((el) => {
+          el.style.display = "inline-block";
+        });
         tlContent.style.zIndex = "200";
         tlBtn.style.zIndex = "300";
         trBtn.style.zIndex = "100";
@@ -79,6 +83,9 @@ function handleWindowResize() {
         tlContent.style.display = "block";
         card.style.marginTop = "";
         card.style.width = "";
+        articles.forEach((el) => {
+          el.style.display = "";
+        });
       }
       break;
 
@@ -366,11 +373,9 @@ blBtn.onclick = function () {
   if (activeCorner === "bottom-left") {
     playClosingAnimation("reverse-animate-bottom-left");
   } else {
-    console.log("1tlBtn", tlBtn);
     tlBtn.innerHTML = "About";
     trBtn.innerHTML = "Experience";
     brBtn.innerHTML = "Contact";
-    console.log("2tlBtn", tlBtn);
 
     // Setting activeCorner
     activeCorner = "bottom-left";
