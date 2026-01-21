@@ -36,7 +36,7 @@ let tlHidden = "translateX(-100vw) translateY(-100vh)";
 let trActive = "translateX(-5vw) translateY(0)";
 let trHidden = "translateX(100vw) translateY(-100vh)";
 
-let blActive = "translateX(10vw) translateY(7vh)";
+let blActive = "translateX(4.5vw) translateY(7vh)";
 let blHidden = "translateX(-100vw) translateY(100vh)";
 
 let brActive = "translateX(-5vw) translateY(0)";
@@ -167,11 +167,10 @@ function handleWindowResize() {
         blBtn.style.zIndex = "300";
         brBtn.style.zIndex = "100";
       } else {
-        blActive = "translateX(10vw) translateY(7vh)";
-        blContent.style.transform = "translateX(10vw) translateY(7vh)";
+        blActive = "translateX(4.5vw) translateY(7vh)";
+        blContent.style.transform = "translateX(4.5vw) translateY(7vh)";
         blContent.style.height = "0";
         blContent.style.top = "26vh";
-        blContent.style.left = "-9vw";
         blContent.style.display = "block";
       }
       break;

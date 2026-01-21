@@ -61,9 +61,8 @@ a {
 
 #garfield__animation__img {
   background-image: var(--tl-1);
-  transform: translateX(8%);
+  background-position: 42% center;
   height: 100%;
-  background-position: center;
   background-size: cover;
 }
 
@@ -317,7 +316,6 @@ article p {
   flex-basis: 50%;
 }
 
-/* ✅ 버튼이 1개만 있을 때 */
 .projects:has(.project__btn:only-of-type) .project__btn {
   flex-basis: 100%;
 }
