@@ -27,8 +27,8 @@ function saveColorMode() {
 
 function updateToggleButton() {
   if (root.classList.contains("dark__mode")) {
-    toggleButton.style.backgroundImage = "url(/assets/icons/moon.png)";
+    toggleButton.style.backgroundImage = "url(/assets/icons/moon.webp)";
   } else {
-    toggleButton.style.backgroundImage = "url(/assets/icons/sun.png)";
+    toggleButton.style.backgroundImage = "url(/assets/icons/sun.webp)";
   }
 }
