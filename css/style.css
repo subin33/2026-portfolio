@@ -369,3 +369,31 @@ article p {
   color: var(--text);
   transition: all 300ms ease;
 }
+
+/* Mobile */
+@media (max-width: 465px) {
+  #garfield__animation {
+    height: 18rem;
+    width: 18rem;
+  }
+  #garfield__animation__img {
+    height: 98%;
+  }
+  .cards__content__text {
+    font-size: 13px;
+  }
+  .cards {
+    gap: 0;
+  }
+  article {
+    margin: 0.7rem;
+    padding: 0.3rem;
+  }
+  article h2 {
+    font-size: 0.9rem;
+  }
+  .project__arrow,
+  .project__btn {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
